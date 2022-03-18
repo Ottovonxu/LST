@@ -1,6 +1,5 @@
 import sys
-# sys.path.append('../lsh_imt/')
-sys.path.append('../lsh-pytorch-master/lsh_imt/')
+sys.path.append('lsh_imt/')
 import numpy as np 
 import torch
 import torch.nn as nn
