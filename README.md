@@ -18,7 +18,7 @@ Before Running: Open terminal at this folder
 
 For running:
 
-    python lsh_space.py
+    python lst_space.py
     
 Citation:
 
