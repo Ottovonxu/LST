@@ -153,6 +153,7 @@ while True:
         test_list.append(test_loss.item())
 
     start=time.time()
+    optimizer.zero_grad()
     w=model[0].weight.t().data
     query_vector=query_transform(w,w_batch,input_size,learning_rate)
     
@@ -166,7 +167,7 @@ while True:
     loss = criterion(outputs, labels)
 
     # Backward and optimize
-    optimizer.zero_grad()
+    
     loss.backward()
     optimizer.step()
 
