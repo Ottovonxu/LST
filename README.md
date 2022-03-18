@@ -6,7 +6,7 @@ Required Package:
 
     pip install torch==1.10
     pip install scipy 
-    pip install --pre cupy-cuda102 
+    pip install cupy-cuda102 
     pip install pynvrtc 
     pip install Cython 
 
