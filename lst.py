@@ -1,5 +1,6 @@
 import sys
-sys.path.append('lsh_imt/')
+# sys.path.append('../lsh_imt/')
+sys.path.append('../lsh-pytorch-master/lsh_imt/')
 import numpy as np 
 import torch
 import torch.nn as nn
@@ -56,44 +57,6 @@ def hashing(wrap_set,K,L):
 
 	print("data indexed")
 	return lsh
-
-def stocastic_SGD_LR(model,train_set,tol,learning_rate,max_iter,criterion):
-    # learning optimal classifier [w,b] using batch stocastic descent
-    model.apply(init_weights)
-
-
-    # Train the model
-    iteration=0
-    epoch=0
-
-    loss_list=[]
-    iter_list=[]
-
-    train_size=len(train_set)
-
-    choice_list=np.arange(train_size)
-    while True:
-        if iteration%20==0:
-            new_loss=total_loss(model,train_set,criterion)
-            print('Step {}, Loss: {:.4f}'.format(iteration, new_loss.item()))
-            iter_list.append(iteration)
-            loss_list.append(new_loss.item())
-        images,labels = train_set[choice_list[0]]
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-        
-        # Backward and optimize
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        
-        iteration+=1
-        np.random.shuffle(choice_list)
-        if iteration>max_iter or loss.item()<tol:
-            break
-
-    return iter_list,loss_list
 
 
 def total_loss(model,train_set,criterion):
@@ -160,7 +123,7 @@ wrapped_set=data_wrapping(train_set,input_size)
 wrapped_set=wrapped_set.to(device)
 lsh=hashing(wrapped_set,K,L)
 
-model.load_state_dict(torch.load('model_batch.ckpt', map_location="cuda:0"))
+model.load_state_dict(torch.load('model.ckpt', map_location="cuda:0"))
 w_batch=model[0].weight.data.detach().clone()
 w_batch=w_batch.t()
 

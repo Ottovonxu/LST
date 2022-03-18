@@ -14,11 +14,12 @@ Before Running: Open terminal at this folder
 
     cd lsh-imt
     make
+    python setup.py install
     cd ..
 
 For running:
 
-    python lst_space.py
+    python lst.py
     
 Citation:
 
