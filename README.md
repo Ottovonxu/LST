@@ -12,7 +12,7 @@ Required Package:
 
 Before Running: Open terminal at this folder
 
-    cd lsh-imt
+    cd lsh_imt
     make
     python setup.py install
     cd ..
