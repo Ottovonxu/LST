@@ -19,3 +19,13 @@ Before Running: Open terminal at this folder
 For running:
 
     python lsh_space.py
+    
+Citation:
+
+    @article{xu2021locality,
+      title={Locality sensitive teaching},
+      author={Xu, Zhaozhuo and Chen, Beidi and Li, Chaojian and Liu, Weiyang and Song, Le and Lin, Yingyan and Shrivastava, Anshumali},
+      journal={Advances in Neural Information Processing Systems},
+      volume={34},
+      year={2021}
+    }
