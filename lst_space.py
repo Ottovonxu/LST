@@ -39,7 +39,6 @@ def query_transform(weight,weight_star,input_size,learning_rate):
 def data_wrapping(dataset,input_size):
 	data_size=len(dataset)
 	data_dim=input_size
-	# print(data_dim)
 	wrapped_data=torch.zeros(data_size,data_dim+data_dim+1)
 	for i in range(data_size):
 		data_vector,data_label=dataset[i]
