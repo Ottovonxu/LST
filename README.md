@@ -10,9 +10,9 @@ Required Package:
     pip install pynvrtc 
     pip install Cython 
 
-Before Running: Open terminal at this folder
+LSH Installation:
 
-    cd lsh-imt
+    cd lsh_imt
     make
     python setup.py install
     cd ..
